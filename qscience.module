@@ -1,0 +1,54 @@
+<?php
+// $Id: user_list.module,v 1.19.2.2 2008/12/31 16:25:08 cyu Exp $
+
+/**
+ * @file
+ * 
+ */
+
+
+/**
+ * 
+ * TODO:
+ */
+function qscience_theme() {
+  return array(
+    'qscience_map' => array(
+      'arguments' => array(array()),
+    ),
+  );
+}
+
+/**
+ * 
+ * Implementation of hook_title()
+ * 
+ * Returns the title of the current module's tab
+ */
+function qscience_science_title() {
+  return "QScience";
+}
+
+/**
+ * 
+ * Implementation of hook_science_veiw()
+ * 
+ * Returns HTML to show in the qscience tab
+ * @param array $list	the search results to be rendered and shown in the tab
+ */
+function qscience_science_tab($list) {
+  $output = "QScience map will be here";
+  return $output;
+}
+
+/**
+ * 
+ * TODO:
+ * @param array $vars	contains arguments as an array
+ */
+function theme_qscience_map($list) {
+  
+  $output = qscience_science_tab($list);
+  
+  return $output;
+}
