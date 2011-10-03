@@ -37,7 +37,13 @@ function qscience_science_title() {
  * @param array $list	the search results to be rendered and shown in the tab
  */
 function qscience_science_tab($list) {
-  $output = "QScience map will be here";
+  drupal_add_js('http://livingscience.ethz.ch/livingscience/livingscience/livingscience.nocache.js', 'external'); //TODO: js adds somehow wrongly!
+  drupal_add_js(drupal_get_path('module', 'qscience') .'/qscience.js');
+  $output = '
+    <div id="watchProgress"></div>
+    <div id="mapcontainer" style="width:700px; height:300px"></div>
+    <div id="searchResults"></div>
+  ';
   return $output;
 }
 
